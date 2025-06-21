@@ -46,11 +46,14 @@ If you have any questions, suggestions, or issues, feel free to open an issue or
 - **hyprlock** as lockscreen
 - **hyprsunset** for nightlight
 - **hypriddle** as iddle manager
+- **hypriddle** as iddle manager
 - **eww** for the widgets  (please read the [docs](https://github.com/elkowar/eww))
 - **waybar** as topbar
 - **rofi** as menu application
+- **Oranchelo icon theme** as rofi icon theme
 - **dmenu** as assistant menu application
 - **dunst** as notification manager 
+- **Papirus icon theme** as notification icon theme
 - **greenclip**, **wl-clipboard** for clipboard manager
 - **nemo** as filemanager
 - **ghostty** as terminal
