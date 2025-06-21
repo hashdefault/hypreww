@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#if there is bluetooth
+check_bluetooth=$(systemctl is-active bluetooth)
+
+if [[ "$check_bluetooth" == 'active' ]]; then
+  bluetooth=$(bluetoothctl show | grep Powered | grep yes)
+  if [[ -n "$bluetooth" ]]; then
+    bluetoothctl power off
+    dunstify -i ~/.config/eww/images/bluetooth-off.svg -a "Bluetooth" "Bluetooth" "Turned OFF"
+  else
+    bluetoothctl power on
+    dunstify -i ~/.config/eww/images/bluetooth.svg -a "Bluetooth" "Bluetooth" "Turned ON"
+  fi
+fi

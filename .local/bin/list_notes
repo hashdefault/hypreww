@@ -1,0 +1,65 @@
+#!/bin/bash
+
+dir_path="$HOME/Nextcloud/Notes"
+rofi_theme="$HOME/.config/rofi/launcher/style"
+prompt_icon="󱓧"
+icon_theme="Oranchelo"
+
+select_note() {
+  ls -ap1 "$1" | rofi \
+    -modi "$prompt_icon :" \
+    -show "$prompt_icon" \
+    -theme "$rofi_theme" \
+    -drun-icon-theme "$icon_theme" \
+    -dmenu \
+    -l 10 \
+    -show-icons \
+    -i \
+    -p "$prompt_icon  Select notes or create one:"
+}
+
+launch_editor() {
+  ghostty \
+    --shell-integration='fish' \
+    --working-directory="$dir_path" \
+    --command="nvim +VimwikiGoto\ \"$1\""
+}
+
+main() {
+  while true; do
+    selection=$(select_note "$dir_path")
+
+    # Exit if nothing selected
+    [ -z "$selection" ] && exit
+
+    filepath="$dir_path/$selection"
+
+    # If it's a directory, dive in
+    if [ -d "$filepath" ]; then
+      dir_path="$filepath"
+      continue
+    fi
+
+    # If it's a file, check its type
+    if [ -f "$filepath" ]; then
+      filetype=$(file --brief "$filepath")
+      if [[ "$filetype" == "Unicode text"* || "$filetype" == "ASCII text"* ]]; then
+        break
+      else
+        notify-send "  Not a text file. Try another."
+        continue
+      fi
+    fi
+
+    # If it doesn't exist, offer to create it
+    rofi_confirm=$(echo -e "Yes\nNo" | rofi -theme "$rofi_theme" -dmenu -p "󱓧  '$selection' doesn't exist. Create it?")
+    if [ "$rofi_confirm" == "Yes" ]; then
+      touch "$filepath"
+      break
+    fi
+  done
+
+  launch_editor "$filepath"
+}
+
+main

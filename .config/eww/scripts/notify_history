@@ -1,0 +1,71 @@
+#!/bin/bash
+
+tmplog="/tmp/dunstlog"
+checkfile=$(cat $tmplog)
+literal=""
+
+line_num=1
+if [[ -n "$checkfile" ]]; then
+
+  while IFS= read -r line; do
+    ts=$(echo "$line" | cut -d ";" -f 1)
+    urg=$(echo "$line" | cut -d ";" -f 2)
+    path_icon=$(echo "$line" | cut -d ";" -f 3)
+    body=$(echo "$line" | cut -d ";" -f 4)
+    summary=$(echo "$line" | cut -d ";" -f 5)
+    appname=$(echo "$line" | cut -d ";" -f 6)
+
+    lit='(box :orientation "v" :class "notif-item" :space-evenly false
+          (box :orientation "h" :class "notif-item-header"
+           (label :text "'"$appname"'" :halign "start")
+           (eventbox :halign "end" :cursor "pointer" :class "notif-dismiss-button-event"
+             (button  :class "notif-dismiss-button" :onclick "sed -i '$line_num'd '$tmplog'" "󰅚")
+           )
+          )'
+
+    if [[ $appname == "Screenshot" ]]; then
+
+      lit=$lit'
+          (box :space-evenly false :orientation "v" :valign "center" :halign "center" :class "notif-line-icon-screen"
+            (image :image-width "300" :path "'"$path_icon"'" :class "icon-notif-screenshot" :halign "center" :valign "center")
+            (box :orientation "h" :halign "center" :valign "center" :class "buttons-screenshot"  :space-evenly false
+            (button :halign "start" :class "notif-screen-button-open" :onclick "shotwell '$path_icon' &" "Open")
+            (button :halign "end" :class "notif-screen-button-delete" :onclick "sed -i '$line_num'd '$tmplog'" "Remove"))
+          )
+        )'
+
+    elif [[ $appname == "Spotify" || $appname == "mpc" || $appname == "mpd" ]]; then
+      lit=$lit'
+          (box :orientation "h"  :class "notif-line-icon" :space-evenly false :halign "start" :valign "center"
+            (image :image-width "85" :path "'"$path_icon"'" :class "icon-notif" :halign "start" :valign "center")
+            (box :orientation "v"  :halign "start" :space-evenly false :valign "center" :spacing 10 :class "box-labels-notif"
+              (label :halign "start" :text  "'"$summary"'"  :class "notification-item-title" :wrap true )
+              (label :wrap true :wrap-mode "char" :halign "start" :text  "'"$body"'"  :class "notification-message" )
+            )
+          )
+        )'
+    else
+      lit=$lit'
+          (box :orientation "h"  :class "notif-line-icon" :space-evenly false :halign "start" :valign "center"
+            (image :image-width "85" :path "'"$path_icon"'"  :halign "start" :valign "center")
+            (box :orientation "v"  :halign "start" :space-evenly false :valign "center" :spacing 10 :class "box-labels-notif"
+              (label :halign "start" :text  "'"$summary"'"  :class "notification-item-title" :wrap true )
+              (label :wrap true :wrap-mode "char" :halign "start" :text  "'"$body"'"  :class "notification-message" )
+            )
+          )
+        )'
+    fi
+
+    literal+="$lit"$'\n'
+
+    line_num=$((line_num + 1))
+  done <"$tmplog"
+fi
+
+echo '(box :orientation "v" :class "notification-box-content" :space-evenly false'
+if [[ -z "$literal" ]]; then
+  echo ' (label :text "No notifications." :class "no-notif" )'
+else
+  echo "$literal"
+fi
+echo ')'

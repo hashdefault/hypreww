@@ -1,0 +1,23 @@
+.powermenu {
+  border-radius: 15px;
+  background-color: rgb(30, 30, 30);
+  padding: 10px;
+}
+
+.hover-power-btn:hover {
+  color: rgb(100, 200, 200);
+}
+
+.reboot-button,
+.logout-button,
+.suspend-button,
+.power-button {
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.reboot-button,
+.logout-button,
+.suspend-button {
+  margin-top: 20px;
+}

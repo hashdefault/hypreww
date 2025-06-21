@@ -1,0 +1,7 @@
+(include "./calendar/calendar.yuck")
+(include "./sidemenu/sidemenu.yuck")
+(include "./weather/weather.yuck")
+(include "./powermenu/powermenu.yuck")
+(include "./musicplayer/musicplayer.yuck")
+(include "./notifications/notifications.yuck")
+

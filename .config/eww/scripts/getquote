@@ -1,0 +1,13 @@
+#!/bin/bash
+
+filequote=$(cat /tmp/getquote)
+
+if [[ -z "$filequote" ]]; then
+  response=$(curl -sf https://zenquotes.io/api/quotes/today)
+  if [[ -n $response ]]; then
+    quote=$(echo "$response" | jq -r '.[0].q')
+    echo "$quote" >/tmp/getquote
+  fi
+fi
+
+cat /tmp/getquote

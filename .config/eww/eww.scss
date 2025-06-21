@@ -1,0 +1,18 @@
+@import "./weather/weather.scss";
+@import "./calendar/calendar.scss";
+@import "./powermenu/powermenu.scss";
+@import "./sidemenu/sidemenu.scss";
+@import "./musicplayer/musicplayer.scss";
+@import "./notifications/notifications.scss";
+
+window {
+  all: unset;
+  background-color: #171717;
+  color: #d0ddf2;
+  font-family: 'Ubuntu Nerd Font';
+}
+
+button {
+  all: unset;
+  background-color: rgb(30, 30, 30);
+}
