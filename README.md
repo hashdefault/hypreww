@@ -49,7 +49,8 @@ If you have any questions, suggestions, or issues, feel free to open an issue or
 - **eww** for the widgets  (please read the [docs](https://github.com/elkowar/eww))
 - **waybar** as topbar
 - **rofi** as menu application
-- **dmenu** as assistent menu application
+- **dmenu** as assistant menu application
+- **dunst** as notification manager 
 - **greenclip**, **wl-clipboard** for clipboard manager
 - **nemo** as filemanager
 - **ghostty** as terminal
@@ -70,7 +71,7 @@ If you have any questions, suggestions, or issues, feel free to open an issue or
 ## Install
   to install all these tools
   ```
-  yay -S hyprland hyprlock hyprsunset hypridle waybar rofi dmenu greenclip fish wl-clipboard nemo ghostty librewolf pasystray swww
+  yay -S hyprland hyprlock dunst hyprsunset hypridle waybar rofi dmenu greenclip fish wl-clipboard nemo ghostty librewolf pasystray swww
   ```
   ```
   sudo pacman -S python-pywal
