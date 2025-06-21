@@ -54,6 +54,7 @@ If you have any questions, suggestions, or issues, feel free to open an issue or
 - **dmenu** as assistant menu application
 - **dunst** as notification manager 
 - **Papirus icon theme** as notification icon theme
+- **grim, slurp, swappy** for screenshots
 - **greenclip**, **wl-clipboard** for clipboard manager
 - **nemo** as filemanager
 - **ghostty** as terminal
@@ -74,7 +75,7 @@ If you have any questions, suggestions, or issues, feel free to open an issue or
 ## Install
   to install all these tools
   ```
-  yay -S hyprland hyprlock dunst hyprsunset hypridle waybar rofi dmenu greenclip fish wl-clipboard nemo ghostty librewolf pasystray swww
+  yay -S hyprland hyprlock dunst hyprsunset hypridle waybar grim slurp swappy rofi dmenu greenclip fish wl-clipboard nemo ghostty librewolf pasystray swww
   ```
   ```
   sudo pacman -S python-pywal
