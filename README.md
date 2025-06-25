@@ -45,7 +45,7 @@ If you have any questions, suggestions, or issues, feel free to open an issue or
 - **hyprland** as desktop
 - **hyprlock** as lockscreen
 - **hyprsunset** for nightlight
-- **hypriddle** as iddle manager
+- **hypridle** as idle manager
 - **hypriddle** as iddle manager
 - **eww** for the widgets  (please read the [docs](https://github.com/elkowar/eww))
 - **waybar** as topbar
