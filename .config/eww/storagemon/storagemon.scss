@@ -1,0 +1,131 @@
+* {
+  all: unset;
+  font-family: Ubuntu;
+}
+
+.storagemon {
+  padding: 10px;
+  border-radius: 10px;
+}
+.box-disks {
+  margin:20px 10px;
+}
+
+.cpu-graph {
+  margin: 5px;
+  background-color: rgb(190, 250, 190);
+  color: rgb(120, 120, 200);
+}
+
+.proc-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.proc-header {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 2px;
+  border-bottom: 2px solid rgb(100, 100, 100);
+  color: skyblue;
+}
+
+.proc-body {
+  font-size: 15px;
+  margin: 5px;
+  color: #ccc;
+}
+
+.ram-graph {
+  margin: 5px;
+  background-color: rgb(190, 250, 190);
+  color: rgb(20, 200, 250);
+}
+
+.storage-graph {
+  margin: 10px;
+  background-color: rgb(190, 250, 190);
+  color: rgb(220, 80, 80);
+}
+
+
+.disk-description-usage,
+.disk-description-used,
+.disk-description-available {
+  margin: 0px 10px;
+  font-size: 15px;
+}
+
+.cpu-description-usage,
+.cpu-description-used,
+.cpu-description-available {
+  margin: 0px 10px;
+  font-size: 15px;
+}
+
+.ram-description-usage,
+.ram-description-used,
+.ram-description-available {
+  margin: 0px 10px;
+  font-size: 15px;
+}
+
+.storage {
+  margin-left: 20px;
+}
+
+.header-cpu-description {
+  font-size: 25px;
+  color: #ddd;
+  font-weight: bold;
+}
+
+.header-disk-description {
+  font-size: 30px;
+  color: #ddd;
+  font-weight: bold;
+}
+
+.header-ram-description {
+  font-size: 25px;
+  color: #ddd;
+  font-weight: bold;
+}
+
+.disk-description-used.number {
+  color: rgb(170, 170, 230);
+}
+
+.disk-description-available.number {
+  color: rgb(190, 250, 190);
+}
+
+.disk-description-usage.number {
+  color: rgb(220, 130, 130);
+}
+
+.cpu-description-used.number {
+  color: rgb(170, 170, 230);
+}
+
+.cpu-description-available.number {
+  color: rgb(190, 250, 190);
+}
+
+.cpu-description-usage.number {
+  color: rgb(120, 120, 200);
+}
+
+.ram-description-used.number {
+  color: rgb(170, 170, 230);
+}
+
+.ram-description-available.number {
+  color: rgb(190, 250, 190);
+}
+
+.ram-description-usage.number {
+  color: rgb(20, 200, 250);
+}
