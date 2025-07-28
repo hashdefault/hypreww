@@ -87,7 +87,7 @@ If you have any questions, suggestions, or issues, feel free to open an issue or
   Please follow the [docs](https://github.com/elkowar/eww).
   **COMPILE EWW CHOOSING WAYLAND**
 
-### I have been inspired for: 🫀
+### I have been inspired by: 🫀
 - [JaKooLit](https://github.com/JaKooLit/Arch-Hyprland)
 - [Axarva](https://github.com/Axarva/dotfiles-2.0)
 - [Syndrizzle](https://github.com/Syndrizzle/hotfiles)
