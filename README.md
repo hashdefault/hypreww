@@ -24,6 +24,8 @@ If you have any questions, suggestions, or issues, feel free to open an issue or
   ### Ghostty following pywal colorscheme
   ![image](https://github.com/user-attachments/assets/03221918-6f6d-4ed3-a616-1d31245df4f5)
 
+  ### Keybinds Guide Fixed && Disk usage
+  <img width="1919" height="1078" alt="image" src="https://github.com/user-attachments/assets/f2149083-8f0d-4fbc-b88a-c2e1f28d433b" />
 
 
 ## Main Keybinds ⌨️ 
